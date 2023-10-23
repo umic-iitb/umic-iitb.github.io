@@ -1,56 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction</title>
-    <style> 
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            color: #333;
-        }
-        h1 {
-            margin-bottom: 50px;
-        }
-        .timer {
-            font-size: 24px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Construction</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    h1 {
+      margin-bottom: 50px;
+    }
+
+    .timer {
+      font-size: 24px;
+    }
+
+    .social-media {
+      margin-top: 50px;
+    }
+
+    .social-media a {
+      margin: 0 10px;
+      color: #333;
+      text-decoration: none;
+      font-size: 24px;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>Our Website is Under Construction</h1>
-        <div>We'll be here soon with our new awesome site.</div>
-        <div class="timer" id="timer"></div>
+  <div class="container">
+    <h1>Our Website is Under Construction</h1>
+    <div>We'll be here soon with our new awesome site.</div>
+    <div class="timer" id="timer"></div>
+    <div class="social-media">
+      <a href="mailto:innovation.cell.iitb@gmail.com" target="_blank" title="Email us"><i class="fa fa-envelope"></i></a>
+      <a href="https://www.instagram.com/umic_iitb/" target="_blank" title="Follow us on Instagram"><i
+          class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/unmesh-mashruwala-innovation-cell-iit-bombay/" target="_blank"
+        title="Connect with us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com/umic_iitb" target="_blank" title="Follow us on X"><i
+          class="fa-brands fa-x-twitter"></i></a>
     </div>
+    <div style="margin-top: 20px;">
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
 
-    <script>
-        // Set the date we're counting down to
-        var countDownDate = new Date("Oct 31, 2023 11:59:59").getTime();
+  <script>
+    var countDownDate = new Date("Oct 30, 2023 23:59:59").getTime();
+    var x = setInterval(function () {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Update the count down every 1 second
-        var x = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
 
-            document.getElementById("timer").innerHTML = days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
-
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("timer").innerHTML = "WE ARE LIVE NOW!";
-            }
-        }, 1000);
-    </script>
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "WE ARE LIVE NOW!";
+      }
+    }, 1000);
+  </script>
 </body>
+
 </html>
